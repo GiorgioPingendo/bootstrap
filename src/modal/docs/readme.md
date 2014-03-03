@@ -11,6 +11,7 @@ The `$modal` service has only one method: `open(options)` where available option
 * `backdrop` - controls presence of a backdrop. Allowed values: true (default), false (no backdrop), `'static'` - backdrop is present but modal window is not closed when clicking outside of the modal window.
 * `keyboard` - indicates whether the dialog should be closable by hitting the ESC key, defaults to true
 * `windowClass` - additional CSS class(es) to be added to a modal window template
+* `sizingClass` - additional CSS class to be added to the modal-dialog div for size control
 
 The `open` method returns a modal instance, an object with the following properties:
 

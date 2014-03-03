@@ -86,6 +86,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
       templateUrl: 'template/modal/window.html',
       link: function (scope, element, attrs) {
         scope.windowClass = attrs.windowClass || '';
+        scope.sizeClass = attrs.sizeClass || '';
 
         $timeout(function () {
           // trigger CSS transitions
@@ -227,6 +228,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
 
         var angularDomEl = angular.element('<div modal-window></div>');
         angularDomEl.attr('window-class', modal.windowClass);
+        angularDomEl.attr('size-class', modal.sizeClass);
         angularDomEl.attr('index', openedWindows.length() - 1);
         angularDomEl.attr('animate', 'animate');
         angularDomEl.html(modal.content);
@@ -353,7 +355,8 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
                 content: tplAndVars[0],
                 backdrop: modalOptions.backdrop,
                 keyboard: modalOptions.keyboard,
-                windowClass: modalOptions.windowClass
+                windowClass: modalOptions.windowClass,
+                sizeClass: modalOptions.sizeClass
               });
 
             }, function resolveError(reason) {

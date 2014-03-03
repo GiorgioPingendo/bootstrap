@@ -430,6 +430,17 @@ describe('$modal', function () {
 
         expect($document.find('div.modal')).toHaveClass('additional');
       });
+
+      it('should support an additional sizing class as string', function () {
+        open({
+          template: '<div>With custom width class</div>',
+          sizeClass: 'size-change'
+        });
+
+        expect($document.find('div.modal-dialog')).toHaveClass('size-change');
+      });
+
+
     });
   });
 
